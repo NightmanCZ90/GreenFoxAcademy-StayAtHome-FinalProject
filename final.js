@@ -36,4 +36,10 @@ let data = [
     title: "Some angry fantasy creature",
     description: "Created in Adobe Photoshop. An attemp to create a photorealistic painting with nothing just a digital paintbrush"
   }, 
-]
+];
+
+let currentPhoto = 0;
+
+photo.attr("src", data[currentPhoto].photo);
+title.text(data[currentPhoto].title);
+description.text(data[currentPhoto].description);
