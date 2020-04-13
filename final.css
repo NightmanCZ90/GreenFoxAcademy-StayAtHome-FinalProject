@@ -27,6 +27,7 @@ body {
 }
 
 .picture img {
+  max-height: 670px;
   width: 100%;
   margin: auto;
 }
@@ -34,23 +35,28 @@ body {
 .gray-container {
   background-color: rgba(0,0,0,0.5);
   color: white;
-  height: 170px;
+  height: 160px;
   width: 940px;
-  padding: 30px;
+  padding: 0 30px;
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   z-index: 5;
 }
 
 #photo-title {
+  font-size: 1.4rem;
   opacity: 1;
+  padding: 0;
+  margin: 5px 0;
 }
 
 #photo-description {
   font-size: 1.3rem;
-  opacity: 0.5;
+  opacity: 0.6;
+  padding-top: 0;
+  margin-top: 5px;
 }
 
-.forward img {
+#forward img {
   transform: rotate(0.5turn);
 }

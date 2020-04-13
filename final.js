@@ -1,6 +1,8 @@
-const photo       = $("#photo"),
+let   photo       = $("#photo"),
       title       = $("#photo-title"),
-      description = $("#photo-description");
+      description = $("#photo-description"),
+      back        = $("#back"),
+      forward     = $("#forward");
 
 let data = [
   {
@@ -38,8 +40,37 @@ let data = [
   }, 
 ];
 
-let currentPhoto = 0;
+let currentPhoto = 1;
 
-photo.attr("src", data[currentPhoto].photo);
-title.text(data[currentPhoto].title);
-description.text(data[currentPhoto].description);
+// photo.attr("src", data[currentPhoto].photo);
+// title.text(data[currentPhoto].title);
+// description.text(data[currentPhoto].description);
+
+let loadPhoto = (photoNumber) => {
+  photo.attr("src", data[photoNumber].photo);
+  title.text(data[photoNumber].title);
+  description.text(data[photoNumber].description);
+};
+
+loadPhoto(currentPhoto);
+
+forward.on("click", () => {
+  currentPhoto++;
+  if(currentPhoto === data.length){
+    currentPhoto = 0;
+    loadPhoto(currentPhoto);
+  } else {
+    loadPhoto(currentPhoto);
+  }
+});
+
+back.on("click", () => {
+  currentPhoto--;
+  if(currentPhoto === -1){
+    currentPhoto = data.length-1;
+    loadPhoto(currentPhoto);
+  } else {
+    loadPhoto(currentPhoto);
+  }
+});
+
