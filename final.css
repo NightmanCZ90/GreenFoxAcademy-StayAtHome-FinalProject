@@ -17,13 +17,13 @@ body {
   height: 100%;
 }
 
-#photo {
+.picture {
   background-color: black;
   width: 1000px;
   display: flex;
 }
 
-#photo img {
+.picture img {
   width: 100%;
   margin: auto;
 }
