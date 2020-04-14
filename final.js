@@ -45,6 +45,9 @@ let currentPhoto = 0;
 data.forEach((picture) => {
   dataNum = data.indexOf(picture);
   let thumbnail = `<div class="thumbnail" data-number="${dataNum}">
+                    <div class="thumbnail-title">
+                      <h6>${picture.title}</h6>
+                    </div>
                     <img class="thumbnail-img" src="${picture.photo}" data-number="${dataNum}" alt="">
                   </div>`;
   $(".thumbnails").append(thumbnail);
@@ -70,17 +73,12 @@ let highlight = (photoNumber) => {
   };
 };
 
-
-
 let loadPhoto = (photoNumber) => {
   photo.attr("src", data[photoNumber].photo);
   title.text(data[photoNumber].title);
   description.text(data[photoNumber].description);
   highlight(photoNumber);
 };
-
-
-
 
 loadPhoto(currentPhoto);
 
