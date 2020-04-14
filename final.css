@@ -57,8 +57,24 @@ body {
   margin-top: 5px;
 }
 
+#back:hover {
+  box-shadow: 0px 3px 47px 12px rgb(119, 119, 119);
+}
+
+#back:hover img{
+  opacity: 0.4;
+}
+
 #forward img {
   transform: rotate(0.5turn);
+}
+
+#forward:hover {
+  box-shadow: 0px 3px 47px 12px rgb(119, 119, 119);
+}
+
+#forward:hover img{
+  opacity: 0.4;
 }
 
 .thumbnails {
@@ -70,12 +86,18 @@ body {
 
 .thumbnail {
   background-color: rgb(226, 226, 226);
+  box-shadow: 0px 3px 33px -10px rgba(0,0,0,0.75);
   height: 70px;
-  padding: 2px;
-  margin: 2px;
+  padding: 4px;
+  margin: 4px;
   /* border: 1px solid black; */
+}
+
+.thumbnail:hover {
+
 }
 
 .thumbnail-img {
   height: 100%;
 }
+
