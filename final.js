@@ -74,3 +74,7 @@ back.on("click", () => {
   }
 });
 
+data.forEach((picture) => {
+  
+});
+
