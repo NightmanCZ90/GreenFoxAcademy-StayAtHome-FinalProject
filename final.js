@@ -75,6 +75,23 @@ back.on("click", () => {
 });
 
 data.forEach((picture) => {
-  
+  dataNum = data.indexOf(picture);
+  // let thumbImg = $("<img class='thumbnail-img'>").attr("data-number", dataNum).attr("src", picture.photo);
+
+  // console.log(thumbImg);
+
+  // let thumbnail = '<div class="thumbnail"></div>'
+
+  let thumbnail = `<div class="thumbnail">
+                    <img class="thumbnail-img" src="${picture.photo}" data-number="${dataNum}" alt="">
+                  </div>`;
+
+  // let thumbnail = '<div class="thumbnail""><img class="thumbnail-img"src="' + picture.photo + '" "data-number="' + dataNum + '" alt=""></div>';
+
+  // $("thumbnail").setAttribute("data-id", dataNum);
+  $(".thumbnails").append(thumbnail);
 });
 
+$(".thumbnail-img").on("click", (event) => {
+  console.log($(event.target).attr("data-number"));
+});
