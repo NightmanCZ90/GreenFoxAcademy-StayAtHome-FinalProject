@@ -93,5 +93,8 @@ data.forEach((picture) => {
 });
 
 $(".thumbnail-img").on("click", (event) => {
-  console.log($(event.target).attr("data-number"));
+  console.log(typeof $(event.target).data("number")); 
+  currentPhoto = $(event.target).data("number");
+  console.log(currentPhoto);
+  loadPhoto(currentPhoto);
 });
