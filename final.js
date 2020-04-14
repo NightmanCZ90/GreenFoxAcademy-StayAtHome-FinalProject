@@ -42,15 +42,45 @@ let data = [
 
 let currentPhoto = 0;
 
-// photo.attr("src", data[currentPhoto].photo);
-// title.text(data[currentPhoto].title);
-// description.text(data[currentPhoto].description);
+data.forEach((picture) => {
+  dataNum = data.indexOf(picture);
+  let thumbnail = `<div class="thumbnail" data-number="${dataNum}">
+                    <img class="thumbnail-img" src="${picture.photo}" data-number="${dataNum}" alt="">
+                  </div>`;
+  $(".thumbnails").append(thumbnail);
+});
+
+$(".thumbnail").on("click", (event) => {
+  currentPhoto = $(event.target).data("number");
+  loadPhoto(currentPhoto);
+});
+
+$(".thumbnail-img").on("click", (event) => {
+  currentPhoto = $(event.target).data("number");
+  loadPhoto(currentPhoto);
+});
+
+let highlight = (photoNumber) => {
+  var divs = document.querySelectorAll('div'), i;
+  for (i = 0; i < divs.length; ++i) {
+    console.log($(divs[i]).data("number") == photoNumber);
+    if($(divs[i]).data("number") == photoNumber){
+      $(divs[i]).addClass("selected");
+    } else {$(divs[i]).removeClass("selected")}
+  };
+};
+
+
 
 let loadPhoto = (photoNumber) => {
   photo.attr("src", data[photoNumber].photo);
   title.text(data[photoNumber].title);
   description.text(data[photoNumber].description);
+  highlight(photoNumber);
 };
+
+
+
 
 loadPhoto(currentPhoto);
 
@@ -74,15 +104,3 @@ back.on("click", () => {
   }
 });
 
-data.forEach((picture) => {
-  dataNum = data.indexOf(picture);
-  let thumbnail = `<div class="thumbnail">
-                    <img class="thumbnail-img" src="${picture.photo}" data-number="${dataNum}" alt="">
-                  </div>`;
-  $(".thumbnails").append(thumbnail);
-});
-
-$(".thumbnail-img").on("click", (event) => {
-  currentPhoto = $(event.target).data("number");
-  loadPhoto(currentPhoto);
-});
