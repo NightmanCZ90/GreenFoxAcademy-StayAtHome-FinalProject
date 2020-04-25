@@ -57,12 +57,20 @@ body {
   margin-top: 5px;
 }
 
+#back {
+  transition: all ease 200ms;
+}
+
 #back:hover {
   box-shadow: 0px 3px 47px 12px rgb(119, 119, 119);
 }
 
 #back:hover img{
   opacity: 0.4;
+}
+
+#forward {
+  transition: all ease 200ms;
 }
 
 #forward img {
@@ -91,6 +99,7 @@ body {
   padding: 4px;
   margin: 4px;
   position: relative;
+  transition: all ease 300ms;
 }
 
 .thumbnail:hover {
